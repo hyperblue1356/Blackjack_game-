@@ -1,3 +1,5 @@
+# A place to break stuff
+
 try:
     import tkinter
 except ImportError:  # python 2
