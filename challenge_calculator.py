@@ -3,6 +3,8 @@ try:
 except ImportError:  # python 2
     import Tkinter as tkinter
 
+from tkinter import *
+
 import os
 
 mainWindow = tkinter.Tk()
@@ -29,6 +31,16 @@ mainWindow.rowconfigure(4, weight=3)
 # frame for the radio buttons
 optionFrame = tkinter.LabelFrame(mainWindow, text="File Details")
 optionFrame.grid(row=1, column=2, sticky='ne')
+
+rbValue = tkinter.IntVar()
+rbValue.set(2)
+
+radio1 = tkinter.Radiobutton(optionFrame, text="1", value=1, variable=rbValue, bd=0)
+radio2 = tkinter.Radiobutton(optionFrame, text="2", value=2, variable=rbValue)
+radio3 = tkinter.Radiobutton(optionFrame, text="3", value=3, variable=rbValue)
+radio1.grid(row=0, column=0, sticky='w')
+radio2.grid(row=0, column=1, sticky='w')
+radio3.grid(row=0, column=3, sticky='w')
 
 # Widget to display result
 resultLabel = tkinter.Label(mainWindow)
